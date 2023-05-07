@@ -1,7 +1,7 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+// import './App.css';
 
-import SummaryPage from './pages/summary/SummaryPage';
+import SummaryPage from "./pages/OrderSummary";
 
 function App() {
   return (

@@ -56,12 +56,12 @@ describe("SubmitForm", () => {
       const user = userEvent.setup();
       render(<SubmitForm />);
 
-      const tocLink = screen.getByText("Terms and Conditions");
-      await user.hover(tocLink);
+      const termsAndConditionsLink = screen.getByText("Terms and Conditions");
+      await user.hover(termsAndConditionsLink);
       const popover = screen.getByRole("tooltip", { innerText: "No ice cream will actually be delivered" });
       expect(popover).toBeInTheDocument();
 
-      await user.unhover(tocLink);
+      await user.unhover(termsAndConditionsLink);
       expect(popover).not.toBeInTheDocument();
     });
   });

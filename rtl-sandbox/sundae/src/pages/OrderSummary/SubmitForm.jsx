@@ -11,7 +11,7 @@ const CheckboxLabel = () => {
       <OverlayTrigger
         placement='auto'
         overlay={(props) => (
-          <Tooltip id="tocPopover" {...props}>
+          <Tooltip id="termsAndConditionsPopover" {...props}>
             No ice cream will actually be delivered
           </Tooltip>
         )}
@@ -25,19 +25,19 @@ const CheckboxLabel = () => {
 };
 
 const SubmitForm = () => {
-  const [tocChecked, setTocChecked] = useState(false);
-  const handleTocChange = (event) => setTocChecked(event.target.checked);
+  const [termsAndConditionsChecked, setTermsAndConditionsChecked] = useState(false);
+  const handleTermsAndConditionsChange = (event) => setTermsAndConditionsChecked(event.target.checked);
   return (
     <Form>
       <Form.Group controlId="TOC_checkbox" className="mb-3">
         <Form.Check
           type="checkbox"
-          checked={tocChecked}
-          onChange={handleTocChange}
+          checked={termsAndConditionsChecked}
+          onChange={handleTermsAndConditionsChange}
           label={<CheckboxLabel />}
         />
       </Form.Group>
-      <Button variant="primary" type="submit" disabled={!tocChecked}>
+      <Button variant="primary" type="submit" disabled={!termsAndConditionsChecked}>
         Confirm order
       </Button>
     </Form>
