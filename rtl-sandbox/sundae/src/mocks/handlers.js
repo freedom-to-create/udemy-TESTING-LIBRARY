@@ -1,7 +1,9 @@
 import { rest } from "msw";
 
+import { BASE_URL, ENDPOINTS } from "../constants/api";
+
 export const handlers = [
-  rest.get("http://localhost:3030/scoops", (req, res, ctx) =>
+  rest.get(`${BASE_URL}/${ENDPOINTS.scoops}`, (req, res, ctx) =>
     res(
       ctx.json([
         {
@@ -16,7 +18,7 @@ export const handlers = [
     )
   ),
 
-  rest.get("http://localhost:3030/toppings", (req, res, ctx) =>
+  rest.get(`${BASE_URL}/${ENDPOINTS.toppings}`, (req, res, ctx) =>
     res(
       ctx.json([
         {
